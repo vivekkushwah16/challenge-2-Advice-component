@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Advice generator app</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main role="Advice-container" class="container">
+      <h1 id="adviceHEading"></h1>
+      <div class="adviceWrapper">
+        <q role="paragraph" id="advice"></q>
+      </div>
+      <div role="divider" class="divider">
+       <img src="./images/pattern-divider-desktop.svg" alt="divider between two section">
+      </div>
+      <button class="changeAdviceBtn" role="btn" onclick="handleAdvice()">
+        <img src="./images/icon-dice.svg" alt="advice change btn" />
+      </button>
+    </main>
+    <div class="attribution" role="links">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Vivek Kushwah</a>.
+    </div>
+  </body>
+  <script>
+    async function handleAdvice() {
+      // getting h1 element by id
+      let ID = document.getElementById("adviceHEading");
+      // getting q (Quotes tag) by id
+      let quotes = document.getElementById("advice");
+      // getting a btn by className
+      let btn = document.querySelector(".changeAdviceBtn")
+      // making a get request from sever
+      // console.log(ID,quotes,btn)
+      fetch("https://api.adviceslip.com/advice").then((response) => {
+        response.json().then((json) => {
+          // console.log(json["slip"]);
+          // return json["slip"];
+          ID.innerText=`advice #${json.slip.id}`;
+          quotes.innerText=json.slip.advice
+        });
+      });
+     
+    }
+    handleAdvice();
+    
+  </script>
+</html>

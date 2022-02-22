@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
+:root {
+  --Light_Cyan: hsl(193, 38%, 86%);
+  --Neo_Green: hsl(150, 100%, 66%);
+  --Grayish_Blue: hsl(217, 19%, 24%);
+  --Dark_Grayish_Blue: rgba(32, 38, 50, 255);
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Manrope", sans-serif;
+  box-sizing: border-box;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+body {
+  height: 100vh;
+  background-color: var(--Dark_Grayish_Blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+img {
+  max-width: 100%;
+}
+h1,
+q {
+  text-align: center;
+}
+.container {
+  width: 34rem;
+  min-height: 20.8rem;
+  padding: 2.5rem;
+  background-color: var(--Grayish_Blue);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 1rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
+#adviceHEading {
+  color: var(--Neo_Green);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  margin-bottom: 1.2rem;
+}
+.adviceWrapper {
+  text-align: center;
+  margin-bottom: 1rem;
+  min-height: 60%;
+}
+#advice {
+  font-size: 2.1rem;
+  letter-spacing: 0.5px;
+  color: var(--Light_Cyan);
+  text-align: justify;
+}
+.divider {
+  margin-bottom: 1.5rem;
+  height: 1.3rem;
+  width: calc(100% - 5rem);
+}
+.divider img {
+  height: 100%;
+}
+.changeAdviceBtn {
+  width: 4.5rem;
+  height: 4.5rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background: var(--Neo_Green);
+  position: absolute;
+  bottom: 0rem;
+  transform: translateY(50%);
+  cursor: pointer;
+  border: none;
+}
+.changeAdviceBtn:hover {
+  box-shadow: 0 0 2rem hsla(150, 100%, 66%, 0.795);
+}
+@media screen and (max-width: 580px) {
+  html {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 375px) {
+  body {
+    height: 100vh;
+    background-color: var(--Dark_Grayish_Blue);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 14rem;
+    flex-direction: column;
+  }
+  .container {
+    width: 34rem;
+    min-height: 34rem;
+  }
+  #adviceHEading {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .adviceWrapper {
+    min-height: 65%;
+    margin-bottom: 2rem;
+  }
+  #advice {
+    font-size: 2.5rem;
+  }
+}
